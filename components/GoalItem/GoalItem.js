@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+
+import styles from './GoalItemStyles';
 
 const GoalItem = props => {
   return (
@@ -12,15 +14,5 @@ const GoalItem = props => {
   </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  listItem: {
-    padding: 10,
-    marginVertical: 10,
-    backgroundColor: '#ccc',
-    borderColor: 'black',
-    borderWidth: 1,
-  },
-});
 
 export default GoalItem;

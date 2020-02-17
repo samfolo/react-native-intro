@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Button, Modal } from 'react-native';
+import { View, TextInput, Button, Modal } from 'react-native';
+
+import styles from './GoalInputStyles';
 
 const GoalInput = props => {
   const [enteredGoal, setEnteredGoal] = useState('');
@@ -38,32 +40,5 @@ const GoalInput = props => {
     </Modal>
   );
 }
-
-const styles = StyleSheet.create({
-  inputContainer: {
-    flex: 10,
-    justifyContent: 'center', 
-    alignItems: 'center',
-  },
-  input: {
-    width: '80%',
-    borderBottomColor:
-    "black", borderBottomWidth: 1,
-    padding: 10,
-    marginBottom: 10,
-  },
-  inputButtons: {
-    width: '60%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginHorizontal: 10,
-    alignItems: 'center',
-    marginHorizontal: 10,
-    marginTop: 15,
-  },
-  button: {
-    width: '45%',
-  }
-});
 
 export default GoalInput;

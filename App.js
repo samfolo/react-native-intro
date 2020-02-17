@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Button, FlatList } from 'react-native';
+import { View, Button, FlatList } from 'react-native';
 
-import GoalItem from './components/GoalItem';
-import GoalInput from './components/GoalInput';
+import styles from './AppStyles';
+
+import GoalItem from './components/GoalItem/GoalItem';
+import GoalInput from './components/GoalInput/GoalInput';
 
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
@@ -45,9 +47,3 @@ export default function App() {
     </View> 
   );
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    padding: 50,
-  },
-});
