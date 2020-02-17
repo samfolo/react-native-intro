@@ -13,6 +13,7 @@ export default function App() {
       ...currentGoals, 
       { id: Math.random().toString(), value: enteredGoal }
     ]);
+    setIsAddingGoal(false);
   }
 
   const removeGoalHandler = goalId => {
@@ -21,10 +22,15 @@ export default function App() {
     });
   }
 
+  const cancelGoalHandler = () => setIsAddingGoal(false);
+
   return (
     <View style={styles.screen}>
       <Button title="Add New Goal" onPress={() => setIsAddingGoal(true)} />
-      <GoalInput visible={isAddingGoal} onPress={addGoalHandler} />
+      <GoalInput visible={isAddingGoal}
+        onPress={addGoalHandler}
+        onCancel={cancelGoalHandler}
+      />
       <FlatList 
         keyExtractor={(item, i) => item.id}
         data={courseGoals} 
@@ -32,7 +38,8 @@ export default function App() {
           <GoalItem 
             id={itemData.item.id}
             onDelete={removeGoalHandler} 
-            title={itemData.item.value} />
+            title={itemData.item.value}
+          />
         )}
       />
     </View> 
